@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Youssef</h1>
+        <p class="title">Fullstack Developer</p>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+      <section id="about" class="section">
+      <div class="container grid-2">
+        <div>
+          <img
+            class="avatar"
+            src="assets/profile.png"
+            alt="Portrait of Your Name"
+          />
+        </div>
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I’m a fullstack developer who enjoys building accessible, responsive
+            interfaces. I focus on clean code, semantic HTML, and simple, usable
+            design patterns.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:you@example.com">youssef@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+201234567890">+20 1224564334</a></li>
+            <li><strong>Location:</strong> Cairo, Egypt</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Responsive Design</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+   
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Portfolio Website</h3>
+            <p>A simple, responsive personal site built with semantic HTML and CSS3.</p>
+          </article>
+          <article class="card">
+            <h3>UI Components</h3>
+            <p>A small library of reusable, accessible components (buttons, cards, forms).</p>
+          </article>
+          <article class="card">
+            <h3>Landing Page</h3>
+            <p>Clean marketing page with mobile-first layout and performance budgets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section section-alt">
+      <div class="container">
+        <h2>Achievements & Certifications</h2>
+        <ul class="list">
+          <li>Responsive Web Design Certification — FreeCodeCamp (2025)</li>
+          <li>JavaScript Algorithms & Data Structures — Coursera (2024)</li>
+          <li>Top 10% in University Web Design Hackathon (2023)</li>
+        </ul>
+      </div>
+    </section>
+]
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          I’m open to internship and junior roles. The fastest way to reach me is
+          by email at <a href="mailto:you@example.com">youssef@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Youssef. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
