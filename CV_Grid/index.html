@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume Visual (CSS Grid)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="resume">
+    
+    <header class="hero">
+      <div class="hero__inner">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="hero__text">
+          <h1 class="name">Youssef Hany</h1>
+          <p class="role">Fullstack Dev</p>
+          <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna.</p>
+        </div>
+      </div>
+    </header>
+
+   
+    <aside class="sidebar">
+      <section class="block">
+        <h2 class="block__title">Contact</h2>
+        <ul class="contact">
+          <li><span class="dot dot--orange"></span>123 Park Avenue, Michigan, MI</li>
+          <li><span class="dot dot--blue"></span>123 456 7899</li>
+          <li><span class="dot dot--yellow"></span>usf@gmail.com</li>
+          <li><span class="dot dot--red"></span>www.usf.com</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Languages</h2>
+        <div class="lang">
+          <div class="lang__row"><span>English</span><div class="bar"><div class="fill fill--orange" style="--w:90%"></div></div></div>
+          <div class="lang__row"><span>German</span><div class="bar"><div class="fill fill--blue" style="--w:55%"></div></div></div>
+          <div class="lang__row"><span>Spanish</span><div class="bar"><div class="fill fill--red" style="--w:75%"></div></div></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Skills</h2>
+        <div class="skills">
+          <div class="chip chip--peach">Ai</div>
+          <div class="chip chip--blue">Ps</div>
+          <div class="chip chip--orange">Id</div>
+          <div class="chip chip--red">Css</div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Online Info</h2>
+        <ul class="online">
+          <li><span class="icon icon--blue"></span>/Usf</li>
+          <li><span class="icon icon--red"></span>/Usf</li>
+        </ul>
+      </section>
+    </aside>
+
+
+    <section class="content">
+      <section class="panel">
+        <h3 class="section">Achievements</h3>
+        <div class="entry"><strong>2010</strong> <span class="title">Lorem Project</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna.</p></div>
+        <div class="entry"><strong>2012</strong> <span class="title">Vivamus Project</span><p>Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi.</p></div>
+        <div class="entry"><strong>2015</strong> <span class="title">Nunc Project</span><p>Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi.</p></div>
+      </section>
+
+      <section class="panel">
+        <h3 class="section">Education</h3>
+        <div class="edu">
+          <div class="edu__row"><span class="period">2007 – 2020</span><span class="place">ABC School</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa.</p></div>
+          <div class="divider"></div>
+          <div class="edu__row"><span class="period">2020 – 2024</span><span class="place">Ohio University</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa.</p></div>
+          <div class="divider"></div>
+          <div class="edu__row"><span class="period">2024 – 2025</span><span class="place">ABC Studies</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor congue massa.</p></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3 class="section">Work Experience</h3>
+        <div class="work">
+          <div class="work__row"><span class="period">2010 – 2013</span><span class="place">ABC Company</span><p>Lorem ipsum dolor sit amet.</p></div>
+          <div class="divider"></div>
+          <div class="work__row"><span class="period">2013 – 2015</span><span class="place">Azom Company</span><p>Lorem ipsum dolor sit amet.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="stripes" aria-hidden="true">
+      <span class="s s--blue"></span>
+      <span class="s s--peach"></span>
+      <span class="s s--orange"></span>
+    </footer>
+  </main>
+</body>
+</html>
+
+
