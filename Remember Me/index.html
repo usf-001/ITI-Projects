@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login with Remember Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" role="region" aria-labelledby="loginTitle">
+    <div class="header">
+      <div id="loginTitle" class="title">Welcome</div>
+      <div class="subtitle">Sign in to continue</div>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" class="input" placeholder="Enter your email" required />
+        <div class="hint" id="welcomeHint" aria-live="polite"></div>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" class="input" placeholder="Enter your password" required />
+      </div>
+
+      <div class="row space-between" style="flex-wrap: wrap; gap: .7rem 1rem;">
+        <label class="row" for="remember">
+          <input type="checkbox" id="remember" name="remember" />
+          <span>Remember Me</span>
+        </label>
+        <label class="row" for="rememberPw" title="For practice only. Do not use in production.">
+          <input type="checkbox" id="rememberPw" name="rememberPw" />
+          <span>Also remember password</span>
+        </label>
+      </div>
+
+      <button class="btn btn-primary" type="submit" id="loginBtn">Login</button>
+      <div class="foot">
+        <button class="btn btn-ghost" type="button" id="clearBtn">Clear Remember Me</button>
+        <span class="helper">This demo uses localStorage only.</span>
+      </div>
+    </form>
+
+    <div id="message" class="msg" aria-live="polite"></div>
+  </div>
+
+  <script>
+    const KEY_EMAIL = 'rememberedEmail';
+    const KEY_PASSWORD = 'rememberedPassword';
+
+    const form = document.getElementById('loginForm');
+    const emailEl = document.getElementById('email');
+    const passwordEl = document.getElementById('password');
+    const rememberEl = document.getElementById('remember');
+    const rememberPwEl = document.getElementById('rememberPw');
+    const messageEl = document.getElementById('message');
+    const welcomeHintEl = document.getElementById('welcomeHint');
+    const clearBtn = document.getElementById('clearBtn');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedEmail = localStorage.getItem(KEY_EMAIL);
+      const savedPw = localStorage.getItem(KEY_PASSWORD);
+
+      if (savedEmail) {
+        emailEl.value = savedEmail;
+        rememberEl.checked = true;
+        welcomeHintEl.textContent = `Welcome back, ${savedEmail}!`;
+      }
+      if (savedPw) {
+        passwordEl.value = savedPw;
+        rememberPwEl.checked = true;
+      }
+    });
+
+    function showMessage(text) {
+      messageEl.textContent = text;
+      messageEl.className = 'msg show';
+    }
+
+    function clearMessage() {
+      messageEl.textContent = '';
+      messageEl.className = 'msg';
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearMessage();
+
+      const email = emailEl.value.trim();
+      const pw = passwordEl.value;
+
+      if (!email || !pw) {
+        showMessage('Please enter both email and password');
+        return;
+      }
+
+      if (rememberEl.checked) {
+        localStorage.setItem(KEY_EMAIL, email);
+      } else {
+        localStorage.removeItem(KEY_EMAIL);
+      }
+
+      if (rememberPwEl.checked) {
+        localStorage.setItem(KEY_PASSWORD, pw);
+      } else {
+        localStorage.removeItem(KEY_PASSWORD);
+      }
+
+      showMessage('Logged in successfully.');
+    });
+
+    clearBtn.addEventListener('click', () => {
+      localStorage.removeItem(KEY_EMAIL);
+      localStorage.removeItem(KEY_PASSWORD);
+      emailEl.value = '';
+      passwordEl.value = '';
+      rememberEl.checked = false;
+      rememberPwEl.checked = false;
+      welcomeHintEl.textContent = '';
+      showMessage('Cleared stored login data.');
+      emailEl.focus();
+    });
+  </script>
+</body>
+</html>
+
+
+
